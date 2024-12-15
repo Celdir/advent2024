@@ -67,7 +67,6 @@ fn main() {
     stdin().lock().read_to_string(&mut input).unwrap();
     let (grid_str, moves_str) = input.split_once("\n\n").unwrap();
     let moves = moves_str.replace("\n", "").as_bytes().to_vec();
-    //println!("moves: {}", String::from_utf8(moves.clone()).unwrap());
     let mut grid: Vec<_> = grid_str
         .split("\n")
         .map(|s| s.as_bytes().to_vec())
@@ -89,7 +88,6 @@ fn main() {
 
     let mut ans = 0;
     for i in 0..grid.len() {
-        //println!("{}", String::from_utf8(grid[i].clone()).unwrap());
         for j in 0..grid[i].len() {
             if grid[i][j] == b'O' {
                 ans += 100 * i + j;
